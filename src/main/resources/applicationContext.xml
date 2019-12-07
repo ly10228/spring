@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--属性注入-->
+    <bean id="person" class="com.ly.spring.bean.dto.Person">
+        <property name="name" value="spring"/>
+    </bean>
+
+    <!--构造器注入-->
+    <bean id="car" class="com.ly.spring.bean.dto.Car">
+        <constructor-arg name="company" value="调色板科技"/>
+        <constructor-arg name="brand" value="brand"/>
+        <constructor-arg name="price" value="1000"/>
+    </bean>
+</beans>
