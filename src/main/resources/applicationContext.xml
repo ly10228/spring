@@ -34,7 +34,7 @@
         <property name="car" ref="car"/>
     </bean>
 
-    <bean id="person1" class="com.ly.spring.bean.dto.Person">
+    <bean id="person2" class="com.ly.spring.bean.dto.Person">
         <property name="name" value="spring"/>
         <!-- 内部 bean, 类似于匿名内部类对象. 不能被外部的 bean 来引用, 也没有必要设置 id 属性 -->
         <property name="car">
