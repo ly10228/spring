@@ -34,4 +34,8 @@ public class Car {
                 ", price=" + price +
                 '}';
     }
+
+    public Car() {
+        System.out.println("创建car对象");
+    }
 }
