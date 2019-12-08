@@ -10,8 +10,40 @@
 
     <!--构造器注入-->
     <bean id="car" class="com.ly.spring.bean.dto.Car">
-        <constructor-arg name="company" value="调色板科技"/>
-        <constructor-arg name="brand" value="brand"/>
-        <constructor-arg name="price" value="1000"/>
+        <constructor-arg name="company" index="0" value="调色板科技"/>
+        <constructor-arg name="brand" index="1" value="奔驰"/>
+        <constructor-arg name="price" index="2" value="1000"/>
     </bean>
+    <bean id="car1" class="com.ly.spring.bean.dto.Car">
+        <constructor-arg name="company" index="0" value="调色板科技"/>
+        <constructor-arg name="brand" index="1" value="宝马"/>
+        <constructor-arg name="maxSpeed" index="2" value="240"/>
+    </bean>
+    <bean id="car2" class="com.ly.spring.bean.dto.Car">
+        <constructor-arg value="ChangAnMazda"></constructor-arg>
+        <!-- 若字面值中包含特殊字符, 则可以使用 DCDATA 来进行赋值. (了解) -->
+        <constructor-arg>
+            <value><![CDATA[<ATARZA>]]></value>
+        </constructor-arg>
+        <constructor-arg value="180" type="int"></constructor-arg>
+    </bean>
+
+    <bean id="person1" class="com.ly.spring.bean.dto.Person">
+        <property name="name" value="spring"/>
+        <!-- 通过 ref 属性值指定当前属性指向哪一个 bean! -->
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean id="person1" class="com.ly.spring.bean.dto.Person">
+        <property name="name" value="spring"/>
+        <!-- 内部 bean, 类似于匿名内部类对象. 不能被外部的 bean 来引用, 也没有必要设置 id 属性 -->
+        <property name="car">
+            <bean id="car3" class="com.ly.spring.bean.dto.Car">
+                <constructor-arg name="company" index="0" value="调色板科技"/>
+                <constructor-arg name="brand" index="1" value="大众"/>
+                <constructor-arg name="maxSpeed" index="2" value="240"/>
+            </bean>
+        </property>
+    </bean>
+
 </beans>

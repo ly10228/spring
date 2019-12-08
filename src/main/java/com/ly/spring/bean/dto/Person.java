@@ -10,6 +10,16 @@ public class Person {
 
     private String name;
 
+    private Car car;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     public String getName() {
         return name;
     }
@@ -25,5 +35,13 @@ public class Person {
 
     public Person() {
         System.out.println("Person类被实例化了.....");
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", car=" + car +
+                '}';
     }
 }
