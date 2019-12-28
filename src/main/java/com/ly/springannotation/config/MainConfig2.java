@@ -3,6 +3,7 @@ package com.ly.springannotation.config;
 import com.ly.springannotation.bean.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
 /**
@@ -29,6 +30,12 @@ public class MainConfig2 {
     @Bean
 //    @Scope("prototype")
     @Scope
+    /**
+     * 懒加载：针对于单实例bean
+     * 单实例bean：默认在容器启动的时候创建对象
+     * 懒加载：容器启动之后不创建对象，第一使用（获取时）Bean时才去创建对象，并进行初始化
+     */
+    @Lazy
     public Person person() {
         System.out.println("往容器当中添加Person....");
         return new Person("张三", 25);
