@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
  **/
 @Controller
 public class BookController {
-    @Autowired
+    @Autowired(required = false)
     private BookService bookService;
 
 }
