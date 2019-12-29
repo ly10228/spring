@@ -1,6 +1,7 @@
 package com.ly.springannotation.bean;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author luoyong
@@ -10,8 +11,11 @@ import lombok.Data;
  **/
 @Data
 public class Person {
+    @Value("ly")
     private String name;
+    @Value("#{20-2}")
     private Integer age;
+    @Value("${person.nickName}")
     private String nickName;
 
     public Person(String name, Integer age) {
