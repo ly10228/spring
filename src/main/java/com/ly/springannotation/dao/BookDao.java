@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
  * @create 2019-12-28 19:48
  * @last modify by [LuoYong 2019-12-28 19:48]
  **/
+//名字默认是类名首字母小写
 @Repository
 public class BookDao {
     private String lable = "1";

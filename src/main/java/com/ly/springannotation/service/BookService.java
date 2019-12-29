@@ -26,5 +26,12 @@ public class BookService {
     public void print() {
         System.out.println(bookDao);
     }
+
+    @Override
+    public String toString() {
+        return "BookService{" +
+                "bookDao=" + bookDao +
+                '}';
+    }
 }
 
