@@ -1,10 +1,9 @@
 package com.ly.springannotation.config;
 
 import com.ly.springannotation.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import com.ly.springannotation.condition.LinuxCondition;
+import com.ly.springannotation.condition.WindowsCondition;
+import org.springframework.context.annotation.*;
 
 /**
  * @author luoyong
@@ -12,6 +11,7 @@ import org.springframework.context.annotation.Scope;
  * @create 2019-12-28 22:38
  * @last modify by [LuoYong 2019-12-28 22:38]
  **/
+@Conditional({WindowsCondition.class})
 @Configuration
 public class MainConfig2 {
 
@@ -39,5 +39,24 @@ public class MainConfig2 {
     public Person person() {
         System.out.println("往容器当中添加Person....");
         return new Person("张三", 25);
+    }
+
+
+    /**
+     * @Conditional({Condition}) ： 按照一定的条件进行判断，满足条件给容器中注册bean
+     * <p>
+     * 如果系统是windows，给容器中注册("bill")
+     * 如果是linux系统，给容器中注册("linus")
+     */
+    @Conditional(WindowsCondition.class)
+    @Bean("bill")
+    public Person person01() {
+        return new Person("Bill Gates", 62);
+    }
+
+    @Conditional(LinuxCondition.class)
+    @Bean("linus")
+    public Person person02() {
+        return new Person("linus", 66);
     }
 }
