@@ -1,5 +1,6 @@
 package com.ly.springannotation;
 
+import com.ly.springannotation.bean.Blue;
 import com.ly.springannotation.bean.Person;
 import com.ly.springannotation.config.MainConfig;
 import com.ly.springannotation.config.MainConfig2;
@@ -20,6 +21,34 @@ import java.util.Map;
 public class IOCTest {
     ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
 
+
+    /**
+     * @param
+     * @return void
+     * @Description: 测试给容器当中导入组件
+     * @author luoyong
+     * @create 9:48 2019/12/29
+     * @last modify by [LuoYong 9:48 2019/12/29 ]
+     */
+    @Test
+    public void testImport() {
+        //打印当前容器当中注册的bean
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        Arrays.stream(beanDefinitionNames).forEach(System.out::println);
+
+        Blue blue = (Blue) applicationContext.getBean(Blue.class);
+        System.out.println(blue);
+
+        System.out.println("FactoryBean...");
+        Object bean = applicationContext.getBean("colorFactoryBean");
+        Object bean2 = applicationContext.getBean("colorFactoryBean");
+        System.out.println("bean的类型：" + bean.getClass());
+        System.out.println(bean == bean2);
+
+        //获取bean工厂本身
+        Object bean4 = applicationContext.getBean("&colorFactoryBean");
+        System.out.println(bean4.getClass());
+    }
 
     /**
      * @param
