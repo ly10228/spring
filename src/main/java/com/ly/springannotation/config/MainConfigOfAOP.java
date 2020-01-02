@@ -146,7 +146,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *
  * 	3）、目标方法执行	；
  * 		容器中保存了组件的代理对象（cglib增强后的对象），这个对象里面保存了详细信息（比如增强器，目标对象，xxx）；
- * 		1）、CglibAopProxy.intercept();拦截目标方法的执行
+ * 		1）、CglibAopProxy.intercept() 643 ;拦截目标方法的执行
  * 		2）、根据ProxyFactory对象获取将要执行的目标方法拦截器链；
  * 			List<Object> chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
  * 			1）、List<Object> interceptorList保存所有拦截器 5
