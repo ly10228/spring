@@ -20,7 +20,7 @@ public class UserDao {
 
     @Transactional
     public void insert() {
-        String sql = "INSERT INTO `world`.`user` ( `name`, `account_name`, `email`) VALUES (?,?,?);";
+        String sql = "INSERT INTO `test`.`user` ( `name`, `account_name`, `email`) VALUES (?,?,?);";
         String name = UUID.randomUUID().toString().substring(0, 5);
         jdbcTemplate.update(sql, name, "001", "001@qq.com");
         int i = 10 / 0;
