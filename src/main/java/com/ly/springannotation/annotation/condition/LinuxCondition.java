@@ -1,4 +1,4 @@
-package com.ly.springannotation.condition;
+package com.ly.springannotation.annotation.condition;
 
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -36,7 +36,7 @@ public class LinuxCondition implements Condition {
         String property = environment.getProperty("os.name");
         //可以判断容器当中bean注册的情况 也可以给容器当中注册bean
         boolean definition = registry.containsBeanDefinition("person");
-        if (property.contains("linux")){
+        if (property.contains("linux")|| property.contains("Mac")){
             return true;
         }
         return false;

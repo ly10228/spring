@@ -4,10 +4,10 @@ import com.ly.springannotation.bean.Color;
 import com.ly.springannotation.bean.ColorFactoryBean;
 import com.ly.springannotation.bean.Person;
 import com.ly.springannotation.bean.Red;
-import com.ly.springannotation.condition.LinuxCondition;
-import com.ly.springannotation.condition.MyImportBeanDefinitionRegistrar;
-import com.ly.springannotation.condition.MyImportSelector;
-import com.ly.springannotation.condition.WindowsCondition;
+import com.ly.springannotation.annotation.condition.LinuxCondition;
+import com.ly.springannotation.annotation.importa.MyImportBeanDefinitionRegistrar;
+import com.ly.springannotation.annotation.importa.MyImportSelector;
+import com.ly.springannotation.annotation.condition.WindowsCondition;
 import org.springframework.context.annotation.*;
 
 /**
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.*;
  * @create 2019-12-28 22:38
  * @last modify by [LuoYong 2019-12-28 22:38]
  **/
-@Conditional({WindowsCondition.class})
+@Conditional({LinuxCondition.class})
 @Configuration
 //@Import导入组件，id默认是组件的全类名
 @Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
@@ -42,7 +42,7 @@ public class MainConfig2 {
      * 单实例bean：默认在容器启动的时候创建对象
      * 懒加载：容器启动之后不创建对象，第一使用（获取时）Bean时才去创建对象，并进行初始化
      */
-    @Lazy
+//    @Lazy
     public Person person() {
         System.out.println("往容器当中添加Person....");
         return new Person("张三", 25);

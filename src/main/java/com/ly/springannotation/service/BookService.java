@@ -4,6 +4,9 @@ import com.ly.springannotation.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 /**
  * @author luoyong
  * @Description: BookService
@@ -19,7 +22,7 @@ public class BookService {
      * @Resource(name="bookDao2")
      * @Inject
      */
-    @Autowired
+    @Inject
     private BookDao bookDao;
 
 

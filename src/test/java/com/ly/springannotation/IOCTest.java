@@ -2,6 +2,7 @@ package com.ly.springannotation;
 
 import com.ly.springannotation.bean.Blue;
 import com.ly.springannotation.bean.Person;
+import com.ly.springannotation.bean.Yellow;
 import com.ly.springannotation.config.MainConfig;
 import com.ly.springannotation.config.MainConfig2;
 import org.junit.Test;
@@ -60,11 +61,11 @@ public class IOCTest {
      */
     @Test
     public void test3() {
-
-        //动态获取环境变量的值：Windows 10
+        //动态获取环境变量的值：Mac OS X
         Environment environment = applicationContext.getEnvironment();
         String property = environment.getProperty("os.name");
         System.out.println("当前环境是：" + property);
+        System.out.println(environment.getActiveProfiles());
 
         String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
         Arrays.stream(beanNamesForType).forEach(System.out::println);
@@ -115,5 +116,9 @@ public class IOCTest {
         String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
         //获取容器当中所有定义bean的名字
         Arrays.stream(beanDefinitionNames).forEach(System.out::println);
+//        System.out.println("=====测试在一个pjo里面引用一个spring装配的bean=====");
+//        System.out.println(applicationContext.getBean("person"));
+//        Yellow yellow = new Yellow();
+//        System.out.println(yellow);
     }
 }

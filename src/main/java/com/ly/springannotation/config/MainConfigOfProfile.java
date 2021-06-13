@@ -84,6 +84,9 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware {
     public void setEmbeddedValueResolver(StringValueResolver resolver) {
         //值解析器
         this.valueResolver = resolver;
-        driverClass = valueResolver.resolveStringValue("${db.driverClass}");
+    }
+
+    private String getDriverClassValue() {
+        return valueResolver.resolveStringValue("${db.driverClass}");
     }
 }

@@ -4,6 +4,7 @@ import com.ly.springannotation.bean.Boss;
 import com.ly.springannotation.bean.Car;
 import com.ly.springannotation.bean.Color;
 import com.ly.springannotation.config.MainConfigOfAutowired;
+import com.ly.springannotation.dao.BookDao;
 import com.ly.springannotation.service.BookService;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,19 +19,22 @@ public class IOCTest_Autowired {
     @Test
     public void test01() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAutowired.class);
-        BookService bookService = applicationContext.getBean(BookService.class);
-        System.out.println(bookService);
+//        BookService bookService = applicationContext.getBean(BookService.class);
+//        System.out.println(bookService);
 
-        System.out.println("...bos...");
-        Boss boss = applicationContext.getBean(Boss.class);
-        System.out.println(boss);
-        Car car = applicationContext.getBean(Car.class);
-        System.out.println(car);
-
-        System.out.println("...color...");
-        Color color = applicationContext.getBean(Color.class);
-        System.out.println(color);
-        System.out.println(applicationContext);
+//        BookDao bean = applicationContext.getBean(BookDao.class);
+//        System.out.println(bean);
+//
+//        System.out.println("...bos...");
+//        Boss boss = applicationContext.getBean(Boss.class);
+//        System.out.println(boss);
+//        Car car = applicationContext.getBean(Car.class);
+//        System.out.println(car);
+//
+//        System.out.println("...color...");
+//        Color color = applicationContext.getBean(Color.class);
+//        System.out.println(color);
+        System.out.println("applicationContext======>"+applicationContext);
         applicationContext.close();
 
     }

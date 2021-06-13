@@ -1,4 +1,4 @@
-package com.ly.springannotation.condition;
+package com.ly.springannotation.annotation.importa;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
@@ -10,7 +10,6 @@ import org.springframework.core.type.AnnotationMetadata;
  * @last modify by [LuoYong 2019-12-29 10:20]
  **/
 public class MyImportSelector implements ImportSelector {
-
     /**
      * @param importingClassMetadata 当前标注@Import注解的类的所有注解信息
      * @return

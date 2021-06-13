@@ -16,6 +16,8 @@ public class IOCTest_LifeCycle {
         //1、创建ioc容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
         System.out.println("容器创建完成...");
+//        //多实例bean在获取的时候才会创建对象
+//        Car car =(Car) applicationContext.getBean("car");
         //关闭容器的时候销毁对象
         applicationContext.close();
     }

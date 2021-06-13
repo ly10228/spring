@@ -1,9 +1,11 @@
 package com.ly.springannotation.config;
 
 import com.ly.springannotation.bean.Car;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import com.ly.springannotation.bean.Cat;
+import com.ly.springannotation.bean.Dog;
+import com.ly.springannotation.bean.MyBeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.*;
 
 /**
  * @author luoyong
@@ -50,12 +52,14 @@ import org.springframework.context.annotation.Configuration;
  * @create 2019-12-29 11:06
  * @last modify by [LuoYong 2019-12-29 11:06]
  **/
-@ComponentScan("com.ly.springannotation.bean")
+@ComponentScan(value = "com.ly.springannotation.bean",includeFilters = {@ComponentScan.Filter(type =
+        FilterType.ASSIGNABLE_TYPE,classes = {Dog.class, MyBeanPostProcessor.class})},useDefaultFilters = false)
 @Configuration
 public class MainConfigOfLifeCycle {
 
-    @Bean(initMethod = "init", destroyMethod = "destroy")
-    public Car car() {
-        return new Car();
-    }
+//    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//    @Bean(initMethod = "init", destroyMethod = "destroy")
+//    public Car car() {
+//        return new Car();
+//    }
 }

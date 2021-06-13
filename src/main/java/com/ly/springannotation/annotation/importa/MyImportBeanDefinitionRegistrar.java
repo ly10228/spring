@@ -1,4 +1,4 @@
-package com.ly.springannotation.condition;
+package com.ly.springannotation.annotation.importa;
 
 import com.ly.springannotation.bean.RainBow;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
