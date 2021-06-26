@@ -14,5 +14,10 @@ public class MainTest {
         User user = applicationContext.getBean(User.class);
         //true 直接通过 @Autowired可以获取到ioc容器
         System.out.println(user.getApplicationContext() == applicationContext);
+
+
+        UserAware userAware = applicationContext.getBean(UserAware.class);
+        //true 方式二 implements ApplicationContextAware  如果想要更多的 直接实现XXXAware即可
+        System.out.println(userAware.getApplicationContext() == applicationContext);
     }
 }
