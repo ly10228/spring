@@ -5,7 +5,7 @@ package com.ly.spring.bean.autowire;
  * @author luoyong
  *  * @create 2019-12-08 10:52
  *  * @last modify by [luoyong 2019-12-08 10:52]
- * @Description: Person
+ * @Description: User
  **/
 public class Person {
 
@@ -43,7 +43,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "User{" +
                 "name='" + name + '\'' +
                 ", address=" + address +
                 ", car=" + car +

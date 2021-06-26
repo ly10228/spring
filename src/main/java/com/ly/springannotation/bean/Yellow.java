@@ -12,5 +12,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Data
 public class Yellow {
 //    @Autowired
-//    private Person person;
+//    private User person;
 }

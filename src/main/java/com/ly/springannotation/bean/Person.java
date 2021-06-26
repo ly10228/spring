@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author luoyong
- * @Description: Person
+ * @Description: User
  * @create 2019-12-28 19:31
  * @last modify by [LuoYong 2019-12-28 19:31]
  **/

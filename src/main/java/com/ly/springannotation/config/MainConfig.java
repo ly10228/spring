@@ -28,11 +28,11 @@ import org.springframework.context.annotation.FilterType;
  */
 //@ComponentScan(value = "com.ly.springannotation", excludeFilters = {
 //        @Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class}),
-//        @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {Person.class})
+//        @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {User.class})
 //})
 @ComponentScan(value = "com.ly.springannotation", includeFilters = {
 //        @Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
-//        @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {Person.class}),
+//        @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {User.class}),
         @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class}),
 }, useDefaultFilters = false)
 public class MainConfig {

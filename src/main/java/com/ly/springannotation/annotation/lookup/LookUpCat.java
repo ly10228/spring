@@ -1,5 +1,6 @@
 package com.ly.springannotation.annotation.lookup;
 
+import lombok.Data;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
  **/
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Component
+@Data
 public class LookUpCat {
-
-
+    String name;
 }
