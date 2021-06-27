@@ -1,6 +1,5 @@
 package com.ly.springannotation.annotation.lookup;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,8 +12,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class LookUpMainConfigTest {
 
-    @Test
-    public void test() {
+
+    public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(LookUpMainConfig.class);
 
 

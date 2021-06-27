@@ -1,6 +1,5 @@
 package com.ly.springannotation.core.aware;
 
-import lombok.Data;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -20,7 +19,6 @@ import org.springframework.stereotype.Component;
  * Person为什么能把ApplicationContext、MessageSource当为自己的参数传进来。
  * - 通过实现接口的方式自动注入了 ApplicationContext、MessageSource。是由BeanPostProcessor（Bean的后置处理器完成的）
  **/
-@Data
 @Component
 public class UserAware implements ApplicationContextAware, MessageSourceAware {
 
@@ -43,10 +41,33 @@ public class UserAware implements ApplicationContextAware, MessageSourceAware {
         System.out.println("invoke-->UserAware构造器");
     }
 
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public MessageSource getMessageSource() {
+        return messageSource;
+    }
+
     private Long userId;
 
     private String userName;
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     private Cat cat;
 
@@ -55,4 +76,7 @@ public class UserAware implements ApplicationContextAware, MessageSourceAware {
         this.cat = cat;
     }
 
+    public Cat getCat() {
+        return cat;
+    }
 }
