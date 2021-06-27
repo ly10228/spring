@@ -20,6 +20,7 @@ public class UserAware implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        //依赖回调机制把ioc容器传入
         this.applicationContext = applicationContext;
     }
 
